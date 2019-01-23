@@ -1,0 +1,83 @@
+import java.util.ArrayList;
+/**
+ * Write a description of class circularArray here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class circularArray
+{
+    // instance variables - replace the example below with your own
+    //private int[] array = new int[]{1, 2, 3};
+    ArrayList<Integer> array = new ArrayList<Integer>();
+    private int CurrNum = -1;
+
+    /**
+     * Constructor for objects of class circularArray
+     */
+    public circularArray()
+    {
+        System.out.println("-----------------");
+        //  System.out.println(array.get(CurrNum));
+    }
+
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public void next()
+    {
+        if(array.size() > 0)
+        {
+        CurrNum++;
+        if (CurrNum > array.size() - 1)
+        {
+            CurrNum = 0;
+        }
+
+        System.out.println(array.get(CurrNum));
+       }
+    }
+
+    public void add(int x)
+    {
+
+        array.add(x);
+
+        System.out.println("____");
+        System.out.println("added:");
+        System.out.println(x);
+        System.out.println("____");
+    }
+
+    public void remove(int z)
+    {
+        
+            for(int x = 0; x < array.size(); x++)
+            {
+                if(array.get(x) == z)
+                {
+                    array.remove(x);
+                    System.out.println("____");
+                    System.out.println("removed:");
+                    System.out.println(z);
+                    System.out.println("____");
+                    break;
+                }
+
+            }
+    }
+
+    public void enter(int much)
+    {
+        for(int x = 0; x <= much; x++)
+        {
+            next();
+        }
+
+        System.out.println("- - - - - - - - - - -");
+    }
+
+}
